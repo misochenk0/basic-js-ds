@@ -38,6 +38,7 @@ class Queue {
   }
 
   dequeue() {
+    let val = this.list.value;
     function checkList(l) {
       if(l.next) {
         l.value = l.next.value
@@ -46,11 +47,10 @@ class Queue {
         } else {
           checkList(l.next)
         }
-      } else {
-        return l.value
       }
     }
-    return checkList(this.list)
+    checkList(this.list)
+    return val
      
   }
 }
